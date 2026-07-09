@@ -123,22 +123,22 @@ export async function GET(request: Request) {
       case "details":
         if (!query) return NextResponse.json({ success: false, error: "Missing ID" }, { status: 400 });
         
-        let mediaType = "movie";
+        let detailsMediaType = "movie";
         let actualId = query;
         let fallbackMediaType = "tv";
         
         if (query.startsWith("tv-")) {
-          mediaType = "tv";
+          detailsMediaType = "tv";
           actualId = query.replace("tv-", "");
           fallbackMediaType = "movie";
         } else if (query.startsWith("movie-")) {
-          mediaType = "movie";
+          detailsMediaType = "movie";
           actualId = query.replace("movie-", "");
           fallbackMediaType = "tv";
         }
 
         // Details bypasses the pagination loop entirely
-        let res = await fetch(`${TMDB_BASE_URL}/${mediaType}/${actualId}?api_key=${TMDB_API_KEY}&append_to_response=credits,recommendations`, { next: { revalidate: 3600 } });
+        let res = await fetch(`${TMDB_BASE_URL}/${detailsMediaType}/${actualId}?api_key=${TMDB_API_KEY}&append_to_response=credits,recommendations`, { next: { revalidate: 3600 } });
         let data = await res.json();
         
         // If not found, try the fallback
