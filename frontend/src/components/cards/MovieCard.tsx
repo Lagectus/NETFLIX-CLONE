@@ -108,7 +108,7 @@ export function MovieCard({
   return (
     <motion.div
       ref={cardRef}
-      className={`${styles.cardWrapper} ${sizeClasses[variant]} ${className || ''}`}
+      className={`${styles.cardWrapper} ${sizeClasses[variant as keyof typeof sizeClasses]} ${className || ''}`}
       style={{ perspective: "1000px" }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -134,7 +134,7 @@ export function MovieCard({
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* ── Poster Image ── */}
-        <div className={`${styles.imageWrapper} ${aspectClasses[variant]}`}>
+        <div className={`${styles.imageWrapper} ${aspectClasses[variant as keyof typeof aspectClasses]}`}>
           {/* Placeholder gradient */}
           <div className={styles.placeholder} />
 
