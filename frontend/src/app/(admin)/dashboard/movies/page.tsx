@@ -21,7 +21,7 @@ export default function AdminMoviesPage() {
 
   const filteredMovies = movies.filter((movie) => {
     const matchesSearch = movie.title.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesGenre = selectedGenre === "all" || movie.genres.includes(selectedGenre);
+    const matchesGenre = selectedGenre === "all" || movie.genres.includes(selectedGenre as any);
     return matchesSearch && matchesGenre;
   });
 
