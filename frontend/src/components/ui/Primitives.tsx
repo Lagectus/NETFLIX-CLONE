@@ -27,7 +27,7 @@ export function GradientText({
   animate = true,
   as = "span",
 }: GradientTextProps) {
-  const Tag = motion.create(as);
+  const Tag = motion[as as keyof typeof motion] as any;
 
   return (
     <Tag
