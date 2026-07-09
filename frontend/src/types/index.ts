@@ -30,7 +30,7 @@ export interface Movie {
   createdAt?: string;
 }
 
-export interface Series extends Omit<Movie, "duration"> {
+export interface Series extends Omit<Movie, "duration" | "seasons"> {
   seasons: Season[];
   totalEpisodes: number;
   status: "ongoing" | "completed" | "upcoming";
