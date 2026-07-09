@@ -129,59 +129,54 @@ export default function AdminMoviesPage() {
                 </tr>
               </thead>
               <tbody className={styles.tableBody}>
-                <AnimatePresence>
-                  {filteredMovies.map((movie) => (
-                    <motion.tr
-                      key={movie.id}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0, x: -50 }}
-                      className={styles.tableBodyRow}
-                    >
-                      <td className={styles.tableCell}>
-                        <div className={styles.movieTitleCell}>
-                          <div
-                            className={styles.movieThumb}
-                            style={{
-                              backgroundImage: `linear-gradient(135deg, 
-                                hsl(${(parseInt(movie.id.replace(/\D/g, "")) || 0) * 37 % 360}, 40%, 20%), 
-                                hsl(${((parseInt(movie.id.replace(/\D/g, "")) || 0) * 37 + 60) % 360}, 50%, 15%))`,
-                            }}
-                          />
-                          <div>
-                            <p className={styles.movieTitleText}>{movie.title}</p>
-                            <p className={styles.movieGenresText}>{movie.genres.join(", ")}</p>
-                          </div>
+                {filteredMovies.map((movie) => (
+                  <tr
+                    key={movie.id}
+                    className={styles.tableBodyRow}
+                  >
+                    <td className={styles.tableCell}>
+                      <div className={styles.movieTitleCell}>
+                        <div
+                          className={styles.movieThumb}
+                          style={{
+                            backgroundImage: `linear-gradient(135deg, 
+                              hsl(${(parseInt(movie.id.replace(/\D/g, "")) || 0) * 37 % 360}, 40%, 20%), 
+                              hsl(${((parseInt(movie.id.replace(/\D/g, "")) || 0) * 37 + 60) % 360}, 50%, 15%))`,
+                          }}
+                        />
+                        <div>
+                          <p className={styles.movieTitleText}>{movie.title}</p>
+                          <p className={styles.movieGenresText}>{movie.genres.join(", ")}</p>
                         </div>
-                      </td>
-                      <td className={`${styles.tableCell} ${styles.tableTextDim}`}>{movie.year}</td>
-                      <td className={styles.tableCell}>
-                        <span className={styles.tableRatingBadge}>
-                          {movie.rating}
-                        </span>
-                      </td>
-                      <td className={`${styles.tableCell} ${styles.tableScoreText}`}>⭐ {movie.score}</td>
-                      <td className={`${styles.tableCell} ${styles.tableTextDimmer}`}>{movie.duration}m</td>
-                      <td className={styles.tableCell}>
-                        <Badge variant="success">Published</Badge>
-                      </td>
-                      <td className={styles.tableCellRight}>
-                        <button
-                          onClick={() => toggleFeatured(movie.id)}
-                          className={`${styles.actionBtn} ${styles.featureBtn}`}
-                        >
-                          Feature
-                        </button>
-                        <button
-                          onClick={() => handleDelete(movie.id)}
-                          className={`${styles.actionBtn} ${styles.deleteBtn}`}
-                        >
-                          Delete
-                        </button>
-                      </td>
-                    </motion.tr>
-                  ))}
-                </AnimatePresence>
+                      </div>
+                    </td>
+                    <td className={`${styles.tableCell} ${styles.tableTextDim}`}>{movie.year}</td>
+                    <td className={styles.tableCell}>
+                      <span className={styles.tableRatingBadge}>
+                        {movie.rating}
+                      </span>
+                    </td>
+                    <td className={`${styles.tableCell} ${styles.tableScoreText}`}>⭐ {movie.score}</td>
+                    <td className={`${styles.tableCell} ${styles.tableTextDimmer}`}>{movie.duration}m</td>
+                    <td className={styles.tableCell}>
+                      <Badge variant="success">Published</Badge>
+                    </td>
+                    <td className={styles.tableCellRight}>
+                      <button
+                        onClick={() => toggleFeatured(movie.id)}
+                        className={`${styles.actionBtn} ${styles.featureBtn}`}
+                      >
+                        Feature
+                      </button>
+                      <button
+                        onClick={() => handleDelete(movie.id)}
+                        className={`${styles.actionBtn} ${styles.deleteBtn}`}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
 
