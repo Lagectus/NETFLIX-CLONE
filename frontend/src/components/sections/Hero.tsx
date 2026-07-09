@@ -30,7 +30,7 @@ export function Hero() {
   const { toggleMovie, isBookmarked } = useWatchlistStore();
   
   const [isReady, setIsReady] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Ensure index bounds if featuredMovies length changes
   const currentIndex = heroIndex >= featuredMovies.length ? 0 : heroIndex;
