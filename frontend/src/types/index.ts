@@ -26,6 +26,7 @@ export interface Movie {
   languages?: string[];
   recommendations?: Movie[];
   isBookmarked?: boolean;
+  progress?: number;
   createdAt?: string;
 }
 
