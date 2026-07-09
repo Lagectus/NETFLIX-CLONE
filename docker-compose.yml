@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: cinevault-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: cinevault2025
+      MONGO_INITDB_DATABASE: cinevault
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - cinevault
+
+  redis:
+    image: redis:7-alpine
+    container_name: cinevault-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - cinevault
+
+volumes:
+  mongo-data:
+  redis-data:
+
+networks:
+  cinevault:
+    driver: bridge
