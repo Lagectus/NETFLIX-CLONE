@@ -76,6 +76,7 @@ interface BadgeProps {
   variant?: "default" | "accent" | "success" | "warning" | "premium";
   className?: string;
   icon?: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 const badgeVariants: Record<string, string> = {
@@ -91,10 +92,12 @@ export function Badge({
   variant = "default",
   className,
   icon,
+  style,
 }: BadgeProps) {
   return (
     <motion.span
       className={`${styles.badge} ${badgeVariants[variant]} ${className || ''}`}
+      style={style}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 500, damping: 30 }}
