@@ -59,7 +59,7 @@ export function GlassCard({
     setIsHovered(false);
   }, []);
 
-  const MotionComponent = motion[as as keyof typeof motion] as any;
+  const MotionComponent = as === "section" ? motion.section : as === "article" ? motion.article : motion.div;
 
   return (
     <MotionComponent

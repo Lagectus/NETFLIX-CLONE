@@ -27,7 +27,7 @@ export function GradientText({
   animate = true,
   as = "span",
 }: GradientTextProps) {
-  const Tag = motion[as as keyof typeof motion] as any;
+  const Tag = as === "h1" ? motion.h1 : as === "h2" ? motion.h2 : as === "h3" ? motion.h3 : as === "h4" ? motion.h4 : as === "p" ? motion.p : motion.span;
 
   return (
     <Tag
