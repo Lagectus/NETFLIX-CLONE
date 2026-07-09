@@ -87,13 +87,13 @@ const PORT = process.env.PORT || 5000;
 async function start() {
   try {
     await connectDB();
+  } catch (error) {
+    logger.error("MongoDB connection failed, but starting server anyway:", error);
+  } finally {
     httpServer.listen(PORT, () => {
       logger.info(`🚀 CineVault API running on port ${PORT}`);
       logger.info(`📊 Health: http://localhost:${PORT}/api/health`);
     });
-  } catch (error) {
-    logger.error("Failed to start server:", error);
-    process.exit(1);
   }
 }
 

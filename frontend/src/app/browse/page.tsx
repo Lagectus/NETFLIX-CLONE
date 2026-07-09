@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -56,7 +56,7 @@ const tvGenreNameToId: Record<string, number> = {
   "Western": 37
 };
 
-export default function BrowsePage() {
+function BrowseContent() {
   const searchParams = useSearchParams();
   const initialType = searchParams.get("type") || "all";
   const initialSort = searchParams.get("sort") || "popular";
@@ -263,5 +263,13 @@ export default function BrowsePage() {
 
       <Footer />
     </main>
+  );
+}
+
+export default function BrowsePage() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: "100vh", backgroundColor: "#0B0F19" }} />}>
+      <BrowseContent />
+    </Suspense>
   );
 }
