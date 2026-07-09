@@ -1,0 +1,297 @@
+.pageWrapper {
+  min-height: 100vh;
+  background-color: var(--cv-primary);
+  color: white;
+  position: relative;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: top center;
+  z-index: 0;
+}
+
+.backdropGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(11, 15, 25, 1) 0%, rgba(11, 15, 25, 0.7) 50%, transparent 100%),
+              linear-gradient(to top, rgba(11, 15, 25, 1) 0%, transparent 40%);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  padding-top: 15vh;
+  padding-bottom: 5rem;
+}
+
+.heroContent {
+  max-width: 48rem; /* max-w-3xl */
+}
+
+.title {
+  font-size: 3rem; /* 4xl */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4.5rem; /* 6xl */
+  }
+}
+
+.metadataRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.matchScore {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.rating {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.synopsis {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 40rem;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.playBtn, .trailerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.playBtn {
+  background-color: white;
+  color: black;
+}
+
+.playBtn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.trailerBtn {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: white;
+}
+
+.trailerBtn:hover {
+  background-color: rgba(109, 109, 110, 0.5);
+}
+
+.actionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionIcon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.castList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .castList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.castMember {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.castPhoto {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.castName {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.castCharacter {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.25rem;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.infoLabel {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+}
+
+.infoValue {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.loadingWrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cv-primary);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.languageTabsContainer {
+  margin-bottom: 2rem;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.languageTabsContainer::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.languageTabs {
+  display: inline-flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.languageTab {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 0 0.5rem 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.languageTab:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.languageTabActive {
+  color: white;
+}
+
+.languageTabActive::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem; /* Matches padding-bottom of .languageTabs */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: red; /* Red underline like Netflix */
+}
+
+.recommendationsSection {
+  width: 100%;
+}
+
+.recommendationsCarousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.recommendationsCarousel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}

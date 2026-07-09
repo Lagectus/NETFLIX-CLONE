@@ -1,0 +1,225 @@
+.pageWrapper {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--cv-primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ambientGlowTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(37, 99, 235, 0.05); /* cv-accent/5 */
+  border-radius: 50%;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambientGlowBottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(147, 51, 234, 0.05); /* purple-600/5 */
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.navSpacer {
+  height: 5rem;
+}
+@media (min-width: 1024px) {
+  .navSpacer {
+    height: 6rem;
+  }
+}
+
+.contentSection {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.headerRow {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .headerRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.5rem;
+  max-width: 32rem;
+}
+
+.statsRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.statCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.statLabel {
+  font-size: 0.625rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 800;
+  color: white;
+  margin-top: 0.25rem;
+}
+
+.statValueHighlight {
+  color: var(--cv-highlight);
+}
+
+.tabBar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 0.375rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 24rem;
+  margin-bottom: 2.5rem;
+}
+
+.tabBtn {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.tabBtnActive {
+  background-color: var(--cv-accent);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3), 0 2px 4px -2px rgba(37, 99, 235, 0.3);
+}
+
+.tabBtnInactive {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.tabBtnInactive:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gridArea {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1rem;
+  row-gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .gridArea {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 768px) {
+  .gridArea {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .gridArea {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1280px) {
+  .gridArea {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.emptyIcon {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.emptyTitle {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.emptySubtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 20rem;
+  text-align: center;
+}
+
+.emptyAction {
+  margin-top: 1.25rem;
+}

@@ -1,0 +1,319 @@
+/* Section Header */
+.headerContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--cv-accent);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+@media (min-width: 640px) { .title { font-size: 1.875rem; } }
+@media (min-width: 1024px) { .title { font-size: 2.25rem; } }
+
+.actionBtn {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.actionBtn:hover {
+  color: var(--cv-accent);
+}
+
+/* Horizontal Carousel */
+.carouselWrapper {
+  position: relative;
+}
+
+.carouselScroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carouselScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselFadeLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 1rem;
+  width: 4rem;
+  background: linear-gradient(to right, var(--cv-primary), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carouselFadeRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 1rem;
+  width: 4rem;
+  background: linear-gradient(to left, var(--cv-primary), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Sections Base */
+.section {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.sectionOverflowHidden {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .sectionOverflowHidden {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Popular Section Glow */
+.popularGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background-color: rgba(37, 99, 235, 0.05); /* cv-accent */
+  border-radius: 50%;
+  filter: blur(150px);
+  pointer-events: none;
+}
+
+/* Trending Rank Number */
+.trendingItem {
+  position: relative;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+.trendingRank {
+  position: absolute;
+  left: -1rem;
+  bottom: -1rem;
+  font-size: 120px;
+  font-weight: 900;
+  color: transparent;
+  line-height: 1;
+  z-index: 20;
+  user-select: none;
+  pointer-events: none;
+  -webkit-text-stroke: 2px rgba(255,255,255,0.08);
+}
+.trendingCardWrapper {
+  margin-left: 2rem;
+}
+
+/* Top Rated Badge */
+.topRatedItem {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+.topRatedBadgeRow {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.topRatedRankText {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fbbf24; /* amber-400 */
+}
+.topRatedLine {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.2), transparent);
+}
+
+/* Genres */
+.genresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+@media (min-width: 640px) { .genresGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 768px) { .genresGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .genresGrid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+
+.genreCard {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.genreCardInner {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.genreIcon {
+  font-size: 1.875rem;
+  position: relative;
+  z-index: 10;
+}
+.genreName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 10;
+}
+.genreBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.3s ease;
+}
+.genreGlow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.genreCard:hover .genreGlow {
+  opacity: 1;
+}
+
+/* Originals Glow */
+.originalsGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(147, 51, 234, 0.05); /* purple-600 */
+  border-radius: 50%;
+  filter: blur(150px);
+  pointer-events: none;
+}
+
+/* New Releases Badge */
+.newBadge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  z-index: 30;
+  padding: 0.125rem 0.5rem;
+  background: linear-gradient(to right, var(--cv-accent), #60a5fa);
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Coming Soon Overlay */
+.comingSoonOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(11, 15, 25, 0.4);
+  backdrop-filter: blur(2px);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.comingSoonText {
+  text-align: center;
+}
+.comingSoonLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.comingSoonDate {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-top: 0.25rem;
+}
+
+/* Marquee */
+.marqueeContainer {
+  margin-bottom: 2rem;
+}
+
+.marqueeRow {
+  display: flex;
+  gap: 1rem;
+  animation: marquee 30s linear infinite;
+}
+
+.snapItem {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+.snapItemRelative {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.marqueeFadeLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 8rem;
+  background: linear-gradient(to right, var(--cv-primary), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+.marqueeFadeRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 8rem;
+  background: linear-gradient(to left, var(--cv-primary), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

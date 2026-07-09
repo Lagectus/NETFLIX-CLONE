@@ -1,0 +1,99 @@
+/* GradientText */
+.gradientText {
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.animateGradientShift {
+  animation: gradient-shift 5s ease infinite;
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+.skeletonCircular {
+  border-radius: 9999px;
+}
+.skeletonRectangular {
+  border-radius: 0.75rem;
+}
+.skeletonText {
+  border-radius: 0.375rem;
+  height: 1rem;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.badgeIcon {
+  flex-shrink: 0;
+}
+
+/* Badge Variants */
+.badgeDefault {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.badgeAccent {
+  background-color: rgba(37, 99, 235, 0.2); /* cv-accent/20 */
+  color: #60a5fa; /* cv-highlight */
+  border-color: rgba(37, 99, 235, 0.3);
+}
+.badgeSuccess {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.3);
+}
+.badgeWarning {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+.badgePremium {
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.2), rgba(234, 179, 8, 0.2));
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* Score Ring */
+.scoreRing {
+  position: relative;
+  display: inline-flex;
+}
+.scoreRingText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+}
+.scoreRingSvg {
+  transform: rotate(-90deg);
+}

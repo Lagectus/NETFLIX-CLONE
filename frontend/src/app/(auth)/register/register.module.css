@@ -1,0 +1,196 @@
+.pageWrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bgContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(11, 15, 25, 0.6); /* cv-primary/60 */
+}
+
+.formContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 28rem; /* max-w-md */
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.glassStrong {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 640px) {
+  .glassStrong {
+    padding: 2.5rem;
+  }
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.logoIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(to bottom right, #a855f7, var(--cv-highlight));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stepIndicatorRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stepCircle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.stepCircleActive {
+  background-color: var(--cv-accent);
+  color: white;
+}
+
+.stepCircleInactive {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.stepLine {
+  width: 3rem;
+  height: 0.125rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.stepLineActive {
+  background-color: var(--cv-accent);
+}
+
+.stepLineInactive {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 0.5); /* cv-accent/50 */
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.btnRow {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.signupText {
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 1.5rem;
+}
+
+.signupLink {
+  color: var(--cv-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signupLink:hover {
+  color: var(--cv-highlight);
+}

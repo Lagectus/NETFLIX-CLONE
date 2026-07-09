@@ -1,0 +1,16 @@
+.canvas {
+  pointer-events: none;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to bottom, rgba(31, 41, 55, 0.5), var(--cv-primary));
+}
+
+.fallbackGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+}

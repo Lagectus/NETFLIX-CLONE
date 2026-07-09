@@ -1,0 +1,8 @@
+.mainWrapper {
+  position: relative;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+}

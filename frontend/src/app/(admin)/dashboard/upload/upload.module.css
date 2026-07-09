@@ -1,0 +1,271 @@
+.uploadGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 1280px) {
+  .uploadGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.uploadCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputField {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.textAreaField {
+  resize: none;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.dragZoneContainer {
+  position: relative;
+}
+
+.dragZoneLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  border: 2px dashed;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dragZoneDefault {
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.dragZoneDefault:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.dragZoneActive {
+  border-color: var(--cv-accent);
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.dragZoneSelected {
+  border-color: rgba(16, 185, 129, 0.4);
+  background-color: rgba(16, 185, 129, 0.05);
+}
+
+.dragIcon {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.dragTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+}
+
+.dragSubtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.5rem;
+}
+
+.pointerEventsNone {
+  pointer-events: none;
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.emptyStatus {
+  padding: 5rem 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.875rem;
+}
+
+.statusIndicatorRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.statusLabel {
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.statusText {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--cv-highlight);
+}
+
+.statusCheck {
+  color: #34d399;
+  font-size: 1.5rem;
+}
+
+.statusSpinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--cv-accent);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.progressContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.progressBarBg {
+  height: 0.375rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--cv-accent);
+}
+
+.resGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.resBadge {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.resComplete {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.resTranscoding {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--cv-highlight);
+  border-color: rgba(37, 99, 235, 0.2);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.resPending {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.logsContainer {
+  margin-top: 2rem;
+}
+
+.logsLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.logsViewer {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.625rem;
+  line-height: 1.625;
+  color: #10b981;
+  height: 16rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.875rem;
+  background-color: #10b981;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  margin-left: 0.25rem;
+}

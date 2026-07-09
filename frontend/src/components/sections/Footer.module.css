@@ -1,0 +1,143 @@
+.footer {
+  position: relative;
+  margin-top: 5rem;
+}
+
+.gradientDivider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  background-color: rgba(37, 99, 235, 0.05); /* cv-accent */
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.footerContainer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 1024px) {
+  .footerContainer {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .linksGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .linksGrid {
+    gap: 4rem;
+  }
+}
+
+.groupTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footerLink {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+.footerLink:hover {
+  color: white;
+}
+
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .bottomBar {
+    flex-direction: row;
+  }
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoIcon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, var(--cv-accent), var(--cv-highlight));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.copyright {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.socialBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.socialBtn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: white;
+}

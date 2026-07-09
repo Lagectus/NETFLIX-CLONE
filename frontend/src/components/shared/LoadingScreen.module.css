@@ -1,0 +1,89 @@
+.loadingWrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cv-primary);
+}
+
+.ambientBackground {
+  position: absolute;
+  inset: 0;
+}
+
+.ambientGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  filter: blur(150px);
+}
+
+.contentContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  background: linear-gradient(to bottom right, var(--cv-accent), var(--cv-highlight));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.logoTextWhite {
+  color: white;
+}
+
+.gradientText {
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(135deg, var(--cv-accent), var(--cv-highlight));
+}
+
+.progressBarContainer {
+  width: 12rem;
+  height: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(to right, var(--cv-accent), var(--cv-highlight));
+  border-radius: 9999px;
+}
+
+.loadingText {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}

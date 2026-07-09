@@ -1,0 +1,589 @@
+.dashboardLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--cv-primary);
+  color: white;
+}
+
+.sidebar {
+  width: 16rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1023px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.logoIcon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, var(--cv-accent), var(--cv-highlight));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.adminBadge {
+  margin-left: auto;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.625rem;
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--cv-highlight);
+  border-radius: 9999px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.navLinkActive {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--cv-highlight);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.navLinkInactive {
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid transparent;
+}
+
+.navLinkInactive:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.profileContainer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.profileAvatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, var(--cv-accent), rgba(147, 51, 234, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.profileName {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.profileEmail {
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.mainContent {
+  flex: 1;
+  padding: 1.5rem;
+  overflow: auto;
+}
+
+@media (min-width: 1024px) {
+  .mainContent {
+    padding: 2rem;
+  }
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .pageHeader {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.pageTitle {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.pageSubtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.25rem;
+}
+
+.headerAction {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  background-color: var(--cv-accent);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.headerAction:hover {
+  background-color: #2563eb;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.statCardInner {
+  padding: 1.25rem;
+}
+
+.statHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.statIcon {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.statChangeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statChangeBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.statChangePos {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+}
+
+.statChangeNeg {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+.statChangeText {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.miniChartContainer {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25rem;
+  height: 4rem;
+}
+
+.miniChartBar {
+  flex: 1;
+  border-top-left-radius: 0.125rem;
+  border-top-right-radius: 0.125rem;
+  min-width: 4px;
+}
+
+.twoColLayout {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .twoColLayout {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .colSpan2 {
+    grid-column: span 2 / span 2;
+  }
+}
+
+.chartHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.periodGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.periodBtn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.periodBtnActive {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--cv-highlight);
+}
+
+.periodBtnInactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+.periodBtnInactive:hover {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.activityIcon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.activityInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.activityAction {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activityDetail {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activityTime {
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.filtersBar {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .filtersBar {
+    flex-direction: row;
+  }
+}
+
+.searchContainer {
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .searchContainer {
+    width: 18rem;
+  }
+}
+
+.searchInput {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.genreFilterContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .genreFilterContainer {
+    width: auto;
+  }
+}
+
+.genreFilterLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+}
+
+.genreSelect {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: white;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.genreSelect:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.tableCard {
+  overflow: hidden;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.movieTable {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.tableHeadRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.02);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.tableHeadCell {
+  padding: 1rem;
+}
+
+.tableHeadCellRight {
+  padding: 1rem;
+  text-align: right;
+}
+
+.tableBody {
+  font-size: 0.875rem;
+}
+
+.tableBodyRow {
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.tableBodyRow:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.tableCell {
+  padding: 1rem;
+}
+
+.tableCellRight {
+  padding: 1rem;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.movieTitleCell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.movieThumb {
+  width: 2rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.movieTitleText {
+  font-weight: 700;
+  color: white;
+  line-height: 1.375;
+}
+
+.movieGenresText {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.tableTextDim {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tableTextDimmer {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tableRatingBadge {
+  padding: 0.125rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tableScoreText {
+  font-weight: 700;
+  color: var(--cv-highlight);
+}
+
+.actionBtn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.featureBtn {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+.featureBtn:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.deleteBtn {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+.deleteBtn:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.emptyTableState {
+  padding: 5rem 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+

@@ -1,0 +1,233 @@
+.cardWrapper {
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Size Variants */
+.sizeDefault {
+  width: 200px;
+}
+@media (min-width: 640px) { .sizeDefault { width: 220px; } }
+@media (min-width: 1024px) { .sizeDefault { width: 240px; } }
+
+.sizeWide {
+  width: 300px;
+}
+@media (min-width: 640px) { .sizeWide { width: 340px; } }
+@media (min-width: 1024px) { .sizeWide { width: 380px; } }
+
+.sizeLarge {
+  width: 280px;
+}
+@media (min-width: 640px) { .sizeLarge { width: 320px; } }
+@media (min-width: 1024px) { .sizeLarge { width: 360px; } }
+
+.sizeGrid {
+  width: 100%;
+}
+
+/* Inner Container */
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Image Aspect Ratios */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.aspectDefault { aspect-ratio: 2/3; }
+.aspectWide { aspect-ratio: 16/9; }
+.aspectLarge { aspect-ratio: 3/4; }
+
+/* Placeholder */
+.placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, var(--cv-secondary), var(--cv-primary));
+}
+
+/* Poster Image */
+.posterImage {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s ease;
+}
+.cardWrapper:hover .posterImage {
+  transform: scale(1.1);
+}
+
+/* Text Overlay (Fallback) */
+.titleOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.titleOverlayText {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  line-height: 1.25;
+}
+
+/* Hover Glow */
+.hoverGlow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Bottom Gradient */
+.bottomGradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 66.666%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4), transparent);
+}
+
+/* Border Glow */
+.borderGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.5s ease;
+}
+.borderGlowHovered {
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: inset 0 0 20px rgba(37, 99, 235, 0.1);
+}
+
+/* Score */
+.scoreWrapper {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+}
+
+/* Bookmark Button */
+.bookmarkBtn {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  padding: 0.375rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bookmarkBtnInactive {
+  color: rgba(255, 255, 255, 0.5);
+}
+.bookmarkBtnInactive:hover {
+  color: white;
+}
+.bookmarkBtnActive {
+  color: var(--cv-accent);
+}
+
+/* Progress Bar */
+.progressContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.progressFill {
+  height: 100%;
+  background-color: var(--cv-accent);
+  border-radius: 9999px;
+}
+
+/* Metadata */
+.metadataContainer {
+  padding: 0.75rem;
+}
+.metadataTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.25rem;
+}
+.metadataInfoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+.ratingBadge {
+  padding: 0.125rem 0.375rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 0.25rem;
+  font-size: 10px;
+}
+.genreTruncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover Play Button */
+.playBtnContainer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.playBtnCircle {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.playIcon {
+  margin-left: 0.25rem;
+}
+
+/* Bottom Reflection */
+.bottomReflection {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
