@@ -14,17 +14,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    optimizePackageImports: [
-      "framer-motion",
-      "gsap",
-      "@react-three/fiber",
-      "@react-three/drei",
-      "three",
-    ],
-  },
   // Transpile Three.js ecosystem
   transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
+  generateBuildId: async () => {
+    // Force cache bust on Vercel
+    return 'cinevault-build-' + Date.now();
+  },
 };
 
 export default nextConfig;
